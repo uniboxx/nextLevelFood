@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import classes from './NavLink.module.css';
+import clsx from 'clsx';
 
 function NavLink({ href, children }) {
   const path = usePathname();
@@ -10,11 +11,9 @@ function NavLink({ href, children }) {
   return (
     <Link
       href={href}
-      className={
-        path.startsWith(href)
-          ? classes.link + ' ' + classes.active
-          : classes.link
-      }
+      className={clsx(classes.link, {
+        [classes.active]: path.startsWith(href),
+      })}
     >
       {children}
     </Link>

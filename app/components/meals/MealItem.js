@@ -3,11 +3,12 @@ import classes from './MealItem.module.css';
 import Image from 'next/image';
 
 function MealItem({ title, slug, image, summary, creator }) {
+  const imgUrl = `${process.env.STORAGE_URL}/${image}`;
   return (
     <article className={classes.meal}>
       <header>
         <div className={classes.image}>
-          <Image src={image} alt={title} fill />
+          <Image src={imgUrl} alt={title} fill />
         </div>
         <div className={classes.headerText}>
           <h2>{title}</h2>
