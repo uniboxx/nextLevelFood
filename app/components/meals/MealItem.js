@@ -6,7 +6,7 @@ import { storage } from '@/lib/appwrite';
 function MealItem({ title, slug, summary, creator, appwrite }) {
   // const imgUrl = `${process.env.STORAGE_URL}/${image}`;
   const imgUrl = storage.getFileDownload(
-    process.env.NEXT_PUBLIC_APPWRITE_BUCKET_ID,
+    process.env.APPWRITE_BUCKET_ID,
     appwrite
   );
   return (
