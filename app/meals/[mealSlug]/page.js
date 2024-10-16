@@ -13,7 +13,6 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    lang: 'en',
     title: meal.title,
     description: meal.summary,
   };
