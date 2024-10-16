@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 
 export async function generateMetadata({ params }) {
   const mealData = await getMeal(params.mealSlug);
-  const meal = mealData.documents;
+  const meal = mealData.documents[0];
 
   if (!meal) {
     notFound();
