@@ -29,7 +29,7 @@ async function MealDetailsPage({ params }) {
   meal.instructions = meal.instructions.replace(/\n/g, '<br />');
 
   const imgUrl = storage.getFileDownload(
-    process.env.APPWRITE_BUCKET_ID,
+    process.env.NEXT_PUBLIC_APPWRITE_BUCKET_ID,
     meal.appwrite
   );
 
