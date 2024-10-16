@@ -7,6 +7,11 @@ const nextConfig = {
         hostname: 'ntytxecxpzrxqxwbalcb.supabase.co',
         pathname: '/storage/v1/object/public/meals-images/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cloud.appwrite.io',
+        pathname: '/v1/storage/buckets/**',
+      },
     ],
   },
 };
