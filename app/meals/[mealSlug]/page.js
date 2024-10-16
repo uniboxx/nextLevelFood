@@ -4,7 +4,8 @@ import { getMeal } from '@/lib/meals';
 import { notFound } from 'next/navigation';
 
 export async function generateMetadata({ params }) {
-  const meal = getMeal(params.mealSlug);
+  const mealData = await getMeal(params.mealSlug);
+  const meal = mealData.documents;
 
   if (!meal) {
     notFound();
@@ -16,9 +17,11 @@ export async function generateMetadata({ params }) {
   };
 }
 
-function MealDetailsPage({ params }) {
-  const slug = params.mealSlug;
-  const meal = getMeal(slug);
+async function MealDetailsPage({ params }) {
+  const mealData = await getMeal(params.mealSlug);
+  const meal = mealData.documents[0];
+  // console.log('❌', meal);
+  // console.log('🙂', meal.instructions);
 
   if (!meal) {
     notFound();
