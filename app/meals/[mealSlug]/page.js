@@ -3,20 +3,20 @@ import classes from './page.module.css';
 import { getMeal } from '@/lib/meals';
 import { notFound } from 'next/navigation';
 
-// export async function generateMetadata({ params }) {
-//   const mealData = await getMeal(params.mealSlug);
-//   const meal = mealData.documents[0];
-//   console.log(meal.title);
+export async function generateMetadata({ params }) {
+  const mealData = await getMeal(params.mealSlug);
+  const meal = mealData.documents[0];
+  console.log(meal.title);
 
-//   if (!meal) {
-//     notFound();
-//   }
+  if (!meal) {
+    notFound();
+  }
 
-//   return {
-//     title: meal.title,
-//     description: meal.summary,
-//   };
-// }
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
 
 async function MealDetailsPage({ params }) {
   const mealData = await getMeal(params.mealSlug);
