@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import classes from './MealItem.module.css';
 import Image from 'next/image';
+import { storage } from '@/lib/appwrite';
 
 function MealItem({ title, slug, summary, creator, appwrite }) {
   // const imgUrl = `${process.env.STORAGE_URL}/${image}`;
