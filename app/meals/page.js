@@ -11,7 +11,9 @@ export const metadata = {
 };
 
 async function Meals() {
-  const meals = await getMeals();
+  const mealsData = await getMeals();
+  const meals = mealsData.documents;
+  // console.log('❤️', meals);
 
   return <MealsGrid meals={meals} />;
 }
