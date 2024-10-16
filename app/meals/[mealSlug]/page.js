@@ -7,13 +7,13 @@ import { storage } from '@/lib/appwrite';
 export async function generateMetadata({ params }) {
   const mealData = await getMeal(params.mealSlug);
   const meal = mealData.documents[0];
-  console.log(meal.title);
 
   if (!meal) {
     notFound();
   }
 
   return {
+    lang: 'en',
     title: meal.title,
     description: meal.summary,
   };
@@ -21,9 +21,7 @@ export async function generateMetadata({ params }) {
 
 async function MealDetailsPage({ params }) {
   const mealData = await getMeal(params.mealSlug);
-  const meal = mealData.documents[0];
-  // console.log('❌', meal);
-  // console.log('🙂', meal.instructions);
+  const meal = mealData?.documents[0];
 
   if (!meal) {
     notFound();
