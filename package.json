@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.4",
+    "appwrite": "^16.0.2",
     "better-sqlite3": "^11.3.0",
     "clsx": "^2.1.1",
     "nanoid": "^5.0.7",

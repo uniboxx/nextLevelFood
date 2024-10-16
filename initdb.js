@@ -5,6 +5,7 @@ const dummyMeals = [
   {
     title: 'Juicy Cheese Burger',
     slug: 'juicy-cheese-burger',
+    appwrite: '670f5e86003becab2c2b',
     image: 'burger.jpg',
     summary:
       'A mouth-watering burger with a juicy beef patty and melted cheese, served in a soft bun.',
@@ -27,6 +28,7 @@ const dummyMeals = [
   {
     title: 'Spicy Curry',
     slug: 'spicy-curry',
+    appwrite: '670f5ea40019ee6acd5a',
     image: 'curry.jpg',
     summary:
       'A rich and spicy curry, infused with exotic spices and creamy coconut milk.',
@@ -52,6 +54,7 @@ const dummyMeals = [
   {
     title: 'Homemade Dumplings',
     slug: 'homemade-dumplings',
+    appwrite: '670f5eaf0037bca7d432',
     image: 'dumplings.jpg',
     summary:
       'Tender dumplings filled with savory meat and vegetables, steamed to perfection.',
@@ -74,6 +77,7 @@ const dummyMeals = [
   {
     title: 'Classic Mac n Cheese',
     slug: 'classic-mac-n-cheese',
+    appwrite: '670f5eba000b9f8d685d',
     image: 'macncheese.jpg',
     summary:
       "Creamy and cheesy macaroni, a comforting classic that's always a crowd-pleaser.",
@@ -99,6 +103,7 @@ const dummyMeals = [
   {
     title: 'Authentic Pizza',
     slug: 'authentic-pizza',
+    appwrite: '670f5ec5001fffd9ce04',
     image: 'pizza.jpg',
     summary:
       'Hand-tossed pizza with a tangy tomato sauce, fresh toppings, and melted cheese.',
@@ -121,6 +126,7 @@ const dummyMeals = [
   {
     title: 'Wiener Schnitzel',
     slug: 'wiener-schnitzel',
+    appwrite: '670f5ecf0012a8b2bf92',
     image: 'schnitzel.jpg',
     summary:
       'Crispy, golden-brown breaded veal cutlet, a classic Austrian dish.',
@@ -143,6 +149,7 @@ const dummyMeals = [
   {
     title: 'Fresh Tomato Salad',
     slug: 'fresh-tomato-salad',
+    appwrite: '670f5ed6003bad5249ca',
     image: 'tomato-salad.jpg',
     summary:
       'A light and refreshing salad with ripe tomatoes, fresh basil, and a tangy vinaigrette.',
@@ -169,6 +176,7 @@ db.prepare(
    CREATE TABLE IF NOT EXISTS meals (
        id INTEGER PRIMARY KEY AUTOINCREMENT,
        slug TEXT NOT NULL UNIQUE,
+       appwrite TEXT NOT NULL,
        title TEXT NOT NULL,
        image TEXT NOT NULL,
        summary TEXT NOT NULL,
@@ -184,6 +192,7 @@ async function initData() {
       INSERT INTO meals VALUES (
          null,
          @slug,
+         @appwrite,
          @title,
          @image,
          @summary,

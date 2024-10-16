@@ -2,8 +2,12 @@ import Link from 'next/link';
 import classes from './MealItem.module.css';
 import Image from 'next/image';
 
-function MealItem({ title, slug, image, summary, creator }) {
-  const imgUrl = `${process.env.STORAGE_URL}/${image}`;
+function MealItem({ title, slug, summary, creator, appwrite }) {
+  // const imgUrl = `${process.env.STORAGE_URL}/${image}`;
+  const imgUrl = storage.getFileDownload(
+    process.env.APPWRITE_BUCKET_ID,
+    appwrite
+  );
   return (
     <article className={classes.meal}>
       <header>
