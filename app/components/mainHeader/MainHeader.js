@@ -1,10 +1,16 @@
 import Link from 'next/link';
-import logoImg from '@/assets/logo.png';
+
 import classes from './MainHeader.module.css';
 import Image from 'next/image';
 import MainHeaderBackground from './MainHeaderBackground';
 
 import NavLink from './NavLink';
+import { storage } from '@/lib/appwrite';
+
+const logoUrl = storage.getFileDownload(
+  process.env.APPWRITE_BUCKET_ID,
+  '6710b0730025237e213f'
+);
 
 function MainHeader() {
   return (
@@ -13,7 +19,9 @@ function MainHeader() {
 
       <header className={classes.header}>
         <Link className={classes.logo} href="/">
-          <Image src={logoImg} alt="A plate with food on it" priority />
+          <div className={classes.image}>
+            <Image src={logoUrl} alt="A plate with food on it" priority fill />
+          </div>
           NextLevel Food
         </Link>
         <nav className={classes.nav}>
