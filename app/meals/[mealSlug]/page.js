@@ -3,6 +3,7 @@ import classes from './page.module.css';
 import { getMeal } from '@/lib/meals';
 import { notFound } from 'next/navigation';
 import { storage } from '@/lib/appwrite';
+import { getServerSideProps } from 'next/dist/build/templates/pages';
 
 export async function generateMetadata({ params }) {
   const mealData = await getMeal(params.mealSlug);
@@ -19,8 +20,12 @@ export async function generateMetadata({ params }) {
 }
 
 async function MealDetailsPage({ params }) {
-  const mealData = await getMeal(params.mealSlug);
-  const meal = mealData?.documents[0];
+  try {
+    const mealData = await getMeal(params.mealSlug);
+    const meal = mealData?.documents[0];
+  } catch (err) {
+    console.log(err.message);
+  }
 
   if (!meal) {
     notFound();
