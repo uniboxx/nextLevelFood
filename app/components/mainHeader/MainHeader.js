@@ -19,7 +19,7 @@ function MainHeader() {
 
       <header className={classes.header}>
         <Link className={classes.logo} href="/">
-          <div className={classes.image}>
+          <div aria-hidden="true" className={classes.image}>
             <Image src={logoUrl} alt="A plate with food on it" priority fill />
           </div>
           NextLevel Food
