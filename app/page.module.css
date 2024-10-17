@@ -1,13 +1,18 @@
 .header {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
   margin: 3rem auto;
   width: 90%;
   max-width: 75rem;
+  @media screen and (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 }
 
 .slideshow {
-  width: 40rem;
+  width: 100%;
   height: 25rem;
 }
 
@@ -29,6 +34,7 @@
 }
 
 .cta {
+  grid-column: 1/-1;
   font-size: 1.5rem;
   display: flex;
   gap: 1rem;

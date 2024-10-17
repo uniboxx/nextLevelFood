@@ -1,14 +1,19 @@
 .header {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
   align-items: center;
   padding: 2rem 1rem;
+  @media screen and (max-width: 640px) {
+    grid-template-columns: 1fr;
+    padding: 2rem 10%;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
 }
 
-@media (min-width: 768px) {
-  .header {
-    padding: 2rem 10%;
-  }
+.nav {
+  text-align: right;
 }
 
 .nav ul {
