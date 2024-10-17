@@ -1,14 +1,18 @@
 .header {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   padding: 2rem 1rem;
   gap: 3rem;
   margin: auto;
   max-width: 80rem;
+  @media screen and (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .image {
   position: relative;
-  width: 30rem;
+  width: 100%;
   height: 20rem;
 }
 
@@ -24,6 +28,9 @@
   color: #ddd6cb;
   max-width: 40rem;
   animation: fade-slide-in-from-right 1s ease-out forwards;
+  @media screen and (max-width: 640px) {
+    text-align: center;
+  }
 }
 
 .headerText h1 {
