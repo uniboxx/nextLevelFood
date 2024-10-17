@@ -7,4 +7,8 @@
   margin: 2rem auto;
   list-style: none;
   padding: 0;
+  @media screen and (max-width: 640px) {
+    grid-template-columns: 1fr;
+    grid-gap: 3rem;
+  }
 }
