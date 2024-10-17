@@ -3,7 +3,6 @@ import classes from './page.module.css';
 import { getMeal } from '@/lib/meals';
 import { notFound } from 'next/navigation';
 import { storage } from '@/lib/appwrite';
-import { getServerSideProps } from 'next/dist/build/templates/pages';
 
 export async function generateMetadata({ params }) {
   const mealData = await getMeal(params.mealSlug);
