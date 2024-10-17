@@ -19,12 +19,8 @@ export async function generateMetadata({ params }) {
 }
 
 async function MealDetailsPage({ params }) {
-  try {
-    const mealData = await getMeal(params.mealSlug);
-    const meal = mealData?.documents[0];
-  } catch (err) {
-    console.log(err.message);
-  }
+  const mealData = await getMeal(params.mealSlug);
+  const meal = mealData?.documents[0];
 
   if (!meal) {
     notFound();
